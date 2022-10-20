@@ -9,6 +9,11 @@ class fluent_bit::params {
       $repo_url = "http://packages.fluentbit.io/${distro_id}"
     }
 
+    'Redhat': {
+      $release = $facts['os']['release']['major']
+      $repo_url = "https://packages.fluentbit.io/centos/${release}/\$basearch/"
+    }
+
     default: {
       fail("Unsupported osfamily ${facts['osfamily']}")
     }
