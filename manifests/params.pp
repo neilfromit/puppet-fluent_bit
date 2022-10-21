@@ -3,7 +3,7 @@ class fluent_bit::params {
   $repo_name = 'fluentbit'
   $repo_desc = 'fluentbit'
 
-  case $facts['osfamily'] {
+  case $facts['os']['family'] {
     'debian': {
       $distro_id = downcase($facts['lsbdistid'])
       $repo_url = "http://packages.fluentbit.io/${distro_id}"
@@ -15,7 +15,7 @@ class fluent_bit::params {
     }
 
     default: {
-      fail("Unsupported osfamily ${facts['osfamily']}")
+      fail("Unsupported osfamily ${facts['os']['family']}")
     }
   }
 

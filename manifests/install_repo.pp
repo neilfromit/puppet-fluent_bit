@@ -1,5 +1,5 @@
 class fluent_bit::install_repo inherits fluent_bit {
-  case $facts['osfamily'] {
+  case $facts['os']['family'] {
     'redhat': {
       yumrepo { $fluent_bit::repo_name:
         descr    => $fluent_bit::repo_desc,
@@ -38,7 +38,7 @@ class fluent_bit::install_repo inherits fluent_bit {
     }
 
     default: {
-      fail("Unsupported os family: ${facts['osfamily']}")
+      fail("Unsupported os family: ${facts['os']['family']}")
     }
   }
 }
