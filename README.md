@@ -31,10 +31,10 @@ fluent_bit::configs:
     tag: 'tag1'
 
 # optional custom parsers configuration
-fluent_bit::custom_parsers:
+fluent_bit::parsers:
   parser_01:
     service: 'PARSER'
-    name: 'custom01'
+    name: 'parser_01'
     format: 'regex'
     regex: '^(?<time>[^ ]*) (?<message>[^$]*)$'
     time_key: 'time'

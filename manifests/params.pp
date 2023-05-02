@@ -38,6 +38,6 @@ class fluent_bit::params {
   $config_group = 'root'
   $configs = {}
 
-  $custom_parsers_file = '/etc/td-agent-bit/custom-parsers.conf'
-  $custom_parsers = {}
+  $parsers_file = '/etc/td-agent-bit/parsers-smx.conf'
+  $parsers = {}
 }
