@@ -29,6 +29,16 @@ fluent_bit::configs:
     service: 'INPUT'
     name: 'cpu'
     tag: 'tag1'
+
+# optional custom parsers configuration
+fluent_bit::parsers:
+  parser_01:
+    service: 'PARSER'
+    name: 'parser_01'
+    format: 'regex'
+    regex: '^(?<time>[^ ]*) (?<message>[^$]*)$'
+    time_key: 'time'
+    time_format: '%Y-%m-%dT%H:%M:%S,%L'
 ```
 
 ## Limitations
