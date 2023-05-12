@@ -6,4 +6,9 @@ class fluent_bit::install inherits fluent_bit {
   package { $fluent_bit::package_name:
     ensure => $fluent_bit::package_ensure,
   }
+
+  # Uninstall old package
+  package { 'td-agent-bit':
+    ensure => absent,
+  }
 }
