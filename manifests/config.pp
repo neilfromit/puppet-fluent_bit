@@ -34,11 +34,4 @@ class fluent_bit::config inherits fluent_bit {
     }
   }
 
-  # Delete old configuration
-  file { '/etc/td-agent-bit':
-    ensure  => absent,
-    recurse => true,
-    force   => true,
-  }
-
 }

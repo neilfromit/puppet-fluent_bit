@@ -7,10 +7,4 @@ class fluent_bit::service inherits fluent_bit {
       hasrestart => true,
     }
   }
-
-  # Disable old service
-  service { 'td-agent-bit':
-    ensure => stopped,
-    enable => false,
-  }
 }
